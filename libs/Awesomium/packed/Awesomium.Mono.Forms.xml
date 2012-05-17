@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>/media/Documents/Visual Studio 2010/Projects/Awesomium.NET/Assemblies/Release/Awesomium.Mono.Forms</name>
+    </assembly>
+    <members>
+        <member name="T:Awesomium.Mono.Forms.Utilities">
+            <summary>
+            Utility class providing helper methods that can be used by Windows Forms applications.
+            </summary>
+        </member>
+        <member name="M:Awesomium.Mono.Forms.Utilities.GetCursor(Awesomium.Mono.CursorType)">
+            <summary>
+            Gets the Windows Forms <see cref="T:System.Windows.Forms.Cursor" /> equivalent of an Awesomium <see cref="T:Awesomium.Mono.CursorType" />.
+            </summary>
+            <param name="cursor">
+            The Awesomium cursor type. You can get this by handling the <see cref="E:Awesomium.Mono.WebView.CursorChanged" /> event.
+            </param>
+            <returns>
+            A Windows Forms <see cref="T:System.Windows.Forms.Cursor" />, or null (Nothing in VB) if <see cref="F:Awesomium.Mono.CursorType.None" />
+            is specified.
+            </returns>
+        </member>
+        <member name="M:Awesomium.Mono.Forms.Utilities.GetCursor(Awesomium.Mono.ChangeCursorEventArgs)">
+            <summary>
+            Gets the Windows Forms <see cref="T:System.Windows.Forms.Cursor" /> equivalent of an Awesomium <see cref="T:Awesomium.Mono.CursorType" />.
+            </summary>
+            <param name="e">
+            The data provided to <see cref="E:Awesomium.Mono.WebView.CursorChanged" /> event handler.
+            </param>
+            <returns>
+            A Windows Forms <see cref="T:System.Windows.Forms.Cursor" />, or null (Nothing in VB) if <see cref="F:Awesomium.Mono.CursorType.None" />
+            is specified.
+            </returns>
+        </member>
+        <member name="M:Awesomium.Mono.Forms.Utilities.GetKeyboardEvent(System.Windows.Forms.KeyEventArgs,Awesomium.Mono.WebKeyType)">
+            <summary>
+            Gets an Awesomium <see cref="T:Awesomium.Mono.WebKeyboardEvent" /> equivalent of a Windows Forms key-down or key-up event.
+            </summary>
+            <param name="e">
+            The Windows Forms key-down or key-up event arguments.
+            </param>
+            <param name="eventType">
+            Indicates if this is a key-down or key-up event.
+            </param>
+            <returns>
+            An instance of a <see cref="T:Awesomium.Mono.WebKeyboardEvent" /> representing the Awesomium equivalent of a
+            Windows Forms key-down or key-up event.
+            </returns>
+        </member>
+        <member name="M:Awesomium.Mono.Forms.Utilities.GetKeyboardEvent(System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Gets an Awesomium <see cref="T:Awesomium.Mono.WebKeyboardEvent" /> equivalent of a Windows Forms key-press event.
+            </summary>
+            <param name="e">
+            The Windows Forms key-press event arguments.
+            </param>
+            <returns>
+            An instance of a <see cref="T:Awesomium.Mono.WebKeyboardEvent" /> representing the Awesomium equivalent of a
+            Windows Forms key-press event.
+            </returns>
+        </member>
+        <member name="M:Awesomium.Mono.Forms.Utilities.DrawBuffer(Awesomium.Mono.RenderBuffer,System.Drawing.Bitmap@,Awesomium.Mono.RenderOperations)">
+            <summary>
+            Draws the contents of a <see cref="T:Awesomium.Mono.RenderBuffer" /> to a <see cref="T:System.Drawing.Bitmap" />.
+            </summary>
+            <param name="rBuffer">
+            The pixel buffer of a view. You can get this by calling <see cref="M:Awesomium.Mono.WebView.Render" />,
+            when a view is dirty.
+            </param>
+            <param name="b">
+            A reference to the <see cref="T:System.Drawing.Bitmap" /> that is filled with the contents of the specified
+            pixel buffer. This can be a null reference in which case a new bitmap will be created.
+            Keep a reference to this bitmap for subsequent calls to this method. This prevents useless
+            overhead when the size of the pixel buffer has not changed and a creation of a new bitmap
+            is not required.
+            </param>
+            <param name="rop">
+            Defines the operation that will be used for creating the new bitmap.
+            For details, see the <see cref="T:Awesomium.Mono.RenderOperations" /> enumeration.
+            </param>
+            <remarks>
+            You do not need to check for changes to the size of the pixel buffer before calling this method.
+            </remarks>
+            <seealso cref="P:Awesomium.Mono.WebView.IsDirty" />
+            <seealso cref="M:Awesomium.Mono.WebView.Render" />
+        </member>
+        <member name="M:Awesomium.Mono.Forms.Utilities.DrawBuffer(Awesomium.Mono.RenderBuffer,System.Drawing.Bitmap@)">
+            <summary>
+            Draws the contents of a <see cref="T:Awesomium.Mono.RenderBuffer" /> to a <see cref="T:System.Drawing.Bitmap" />.
+            </summary>
+            <param name="rBuffer">
+            The pixel buffer of a view. You can get this by calling <see cref="M:Awesomium.Mono.WebView.Render" />,
+            when a view is dirty.
+            </param>
+            <param name="b">
+            A reference to the <see cref="T:System.Drawing.Bitmap" /> that is filled with the contents of the specified
+            pixel buffer. This can be a null reference in which case a new bitmap will be created.
+            Keep a reference to this bitmap for subsequent calls to this method. This prevents useless
+            overhead when the size of the pixel buffer has not changed and a creation of a new bitmap
+            is not required.
+            </param>
+            <remarks>
+            You do not need to check for changes to the size of the pixel buffer before calling this method.
+            </remarks>
+            <seealso cref="P:Awesomium.Mono.WebView.IsDirty" />
+            <seealso cref="M:Awesomium.Mono.WebView.Render" />
+        </member>
+        <member name="M:Awesomium.Mono.Forms.Utilities.DrawBuffer(Awesomium.Mono.RenderBuffer,System.Drawing.Graphics,System.Drawing.Bitmap@)">
+            <summary>
+            Draws the contents of a <see cref="T:Awesomium.Mono.RenderBuffer" /> to a <see cref="T:System.Drawing.Bitmap" /> and draws the bitmap
+            to a drawing surface.
+            </summary>
+            <param name="rBuffer">
+            The pixel buffer of a view. You can get this by calling <see cref="M:Awesomium.Mono.WebView.Render" />,
+            when a view is dirty.
+            </param>
+            <param name="g">
+            A <see cref="T:System.Drawing.Graphics" /> instance representing the drawing surface used to paint.
+            </param>
+            <param name="b">
+            A reference to the <see cref="T:System.Drawing.Bitmap" /> that is filled with the contents of the specified
+            pixel buffer. This can be a null reference in which case a new bitmap will be created.
+            Keep a reference to this bitmap for subsequent calls to this method. This prevents useless
+            overhead when the size of the pixel buffer has not changed and a creation of a new bitmap
+            is not required.
+            </param>
+            <remarks>
+            You do not need to check for changes to the size of the pixel buffer before calling this method.
+            <p /><note>
+            The specified <see cref="T:System.Drawing.Graphics" /> is not being disposed. You do not need to dispose it
+            if you get it from within a managed event handler such as <see cref="M:System.Windows.Forms.Form.OnPaint(System.Windows.Forms.PaintEventArgs)" />, but you
+            may need to dispose it after calling this method, if you get it from a different device context.
+            </note></remarks>
+            <seealso cref="P:Awesomium.Mono.WebView.IsDirty" />
+            <seealso cref="M:Awesomium.Mono.WebView.Render" />
+        </member>
+        <member name="M:Awesomium.Mono.Forms.Utilities.DrawBuffer(Awesomium.Mono.RenderBuffer,System.Drawing.Graphics,System.Drawing.Color,System.Drawing.Bitmap@)">
+            <summary>
+            Draws the contents of a <see cref="T:Awesomium.Mono.RenderBuffer" /> to a <see cref="T:System.Drawing.Bitmap" /> and draws the bitmap
+            to a drawing surface.
+            </summary>
+            <param name="rBuffer">
+            The pixel buffer of a view. You can get this by calling <see cref="M:Awesomium.Mono.WebView.Render" />,
+            when a view is dirty.
+            </param>
+            <param name="g">
+            A <see cref="T:System.Drawing.Graphics" /> instance representing the drawing surface used to paint.
+            </param>
+            <param name="color">
+                <see cref="T:System.Drawing.Color" /> structure that represents the background color of the
+            drawing surface. The method clears the entire drawing surface and fills it with the specified background
+            color, before drawing the new bitmap.
+            </param>
+            <param name="b">
+            A reference to the <see cref="T:System.Drawing.Bitmap" /> that is filled with the contents of the specified
+            pixel buffer. This can be a null reference in which case a new bitmap will be created.
+            Keep a reference to this bitmap for subsequent calls to this method. This prevents useless
+            overhead when the size of the pixel buffer has not changed and a creation of a new bitmap
+            is not required.
+            </param>
+            <remarks>
+            You do not need to check for changes to the size of the pixel buffer before calling this method.
+            <p /><note>
+            The specified <see cref="T:System.Drawing.Graphics" /> is not being disposed. You do not need to dispose it
+            if you get it from within a managed event handler such as <see cref="M:System.Windows.Forms.Form.OnPaint(System.Windows.Forms.PaintEventArgs)" />, but you
+            may need to dispose it after calling this method, if you get it from a different device context.
+            </note></remarks>
+            <seealso cref="P:Awesomium.Mono.WebView.IsDirty" />
+            <seealso cref="M:Awesomium.Mono.WebView.Render" />
+        </member>
+        <member name="M:Awesomium.Mono.Forms.Utilities.GetRectangle(Awesomium.Mono.AweRect)">
+            <summary>
+            Gets a <see cref="T:System.Drawing.Rectangle" /> equivalent of an Awesomium <see cref="T:Awesomium.Mono.AweRect" />.
+            </summary>
+            <param name="aweRect">
+            An <see cref="T:Awesomium.Mono.AweRect" /> value representing an Awesomium rectangle.
+            </param>
+            <returns>
+            A <see cref="T:System.Drawing.Rectangle" /> value equivalent of an Awesomium <see cref="T:Awesomium.Mono.AweRect" />.
+            </returns>
+        </member>
+    </members>
+</doc>
